@@ -1,0 +1,23 @@
+{
+  "name": "lab14",
+  "version": "1.0.0",
+  "description": "## Brainstorm ideas",
+  "main": "anxietyProducer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teamtwo-squad/lab14.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teamtwo-squad/lab14/issues"
+  },
+  "homepage": "https://github.com/teamtwo-squad/lab14#readme",
+  "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.5"
+  }
+}

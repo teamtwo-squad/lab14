@@ -16,20 +16,9 @@
   - rememeber that childhood trauma? we do.
 
 ## Project idea
-Anexiety Api:
-  - 
+  
+ - 
 
+## UML
 
-## Installation
-
-## Usage
-
-## Models
-
-## Routes
-
-## Features
-
-## Testing
-
-## Resources
+[Anxiety Room](assets/anxrm.png);
