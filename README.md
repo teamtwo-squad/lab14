@@ -1,4 +1,5 @@
 # lab14
+> Emily Landers - Scott Lease - Matt Miguel - Steve Ngo
 
 ## Brainstorm ideas
 
