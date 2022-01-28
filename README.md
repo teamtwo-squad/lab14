@@ -1,4 +1,5 @@
 # lab14
+> Emily Landers - Scott Lease - Matt Miguel - Steve Ngo
 
 ## Brainstorm ideas
 
@@ -15,5 +16,20 @@
   - rememeber that childhood trauma? we do.
 
 ## Project idea
-  
- - 
+Anexiety Api:
+  - 
+
+
+## Installation
+
+## Usage
+
+## Models
+
+## Routes
+
+## Features
+
+## Testing
+
+## Resources
