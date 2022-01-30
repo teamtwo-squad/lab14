@@ -8,18 +8,13 @@ const PORT = process.env.PORT || 3001;
 const server = socketio(PORT);
 const caps = server.of('/caps');
 
-const insultArray = ['remember that one super embarrassing thing you did in HS?', 'You are loved and appreciated by no one', 'I know youre not 6ft bro', 'Peep the hairline', 'You dont drink enough water', 'Look up your symptoms on google', 'you dont call your family members enough'];
 
 
 
-function insultGenerator(){
-  let anxiety = insultArray[Math.floor(Math.random() * (insultArray.length - 1))];
-  console.log(anxiety);
-  return 'Heres your extra anxiety ' + anxiety;
-}
-function newInsult(insult){
-  insultArray.push(insult);
-}
+
+// function newInsult(insult){
+//   insultArray.push(insult);
+// }
 
 
 
@@ -46,13 +41,11 @@ caps.on('connection', (socket) =>  {
   
   socket.on('hope this helps', payload => {
     socket.broadcast.emit('hope this helps', payload);
-    socket.emit('hope this helps', payload);
-    insultGenerator();
+    // socket.emit('hope this helps', payload);
     logger('hope this helps', payload.Id);
   
   });
 });
-
 
 
 
