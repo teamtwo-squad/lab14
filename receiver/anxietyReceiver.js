@@ -4,7 +4,7 @@
 // measure tph
 'use strict';
 
-const uuid = require('uuid').v4
+const uuid = require('uuid').v4;
 // const  faker  = require('@faker-js/faker');
 
 
