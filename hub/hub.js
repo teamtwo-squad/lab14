@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3001;
 
 const server = socketio(PORT);
 const caps = server.of('/caps');
+
 const insultArray = ['remember that one super embarrassing thing you did in HS?', 'You are loved and appreciated by no one', 'I know youre not 6ft bro', 'Peep the hairline', 'You dont drink enough water', 'Look up your symptoms on google', 'you dont call your family members enough'];
 
 
@@ -32,6 +33,7 @@ caps.on('connection', (socket) =>  {
   socket.on('roastme', payload => {
 
     socket.broadcast.emit('roastme', payload);
+
     logger('roastme', payload.Id);
   });
 
@@ -47,6 +49,7 @@ caps.on('connection', (socket) =>  {
     socket.emit('hope this helps', payload);
     insultGenerator();
     logger('hope this helps', payload.Id);
+  
   });
 });
 
@@ -58,3 +61,5 @@ function logger(event, payload) {
 
   console.log('Event' , event, timestamp);
 }
+
+

@@ -4,16 +4,21 @@
 // measure tph
 'use strict';
 
+
 const uuid = require('uuid').v4;
-// const  faker  = require('@faker-js/faker');
+
+
+
+
 
 
 const socketClient = require('socket.io-client');
 
 const socket = socketClient.connect('http://localhost:3001/caps');
 
+
 function nameGenerator(){
-  const nameArray = ['Thunder', 'Star', 'Danger', 'Hospital', 'Fire', 'Dagger', 'Tree', 'Bird', 'Butt', 'Penguin', 'Water', 'Earth', 'Air', 'Candle', 'Socks', 'Pirate', 'Wing', 'Light', 'Andriod17', 'Rain', 'Tornado', 'Volcano', 'Person', 'Car'];
+  const nameArray = ['Pants','Thunder', 'Star', 'Danger', 'Hospital', 'Fire', 'Dagger', 'Tree', 'Bird', 'Butt', 'Penguin', 'Water', 'Earth', 'Air', 'Candle', 'Socks', 'Pirate', 'Wing', 'Light', 'Andriod17', 'Rain', 'Tornado', 'Volcano', 'Person', 'Car'];
 
   let firstName = nameArray[Math.floor(Math.random() * (nameArray.length - 1))];
 
@@ -52,7 +57,3 @@ socket.on('hope this helps', payload => {
   process.exit();
 });
 
-// function handleDeliv(payload) {
-//   console.log(`Order number ${payload.orderID} delivered`);
-//   process.exit();
-// }
