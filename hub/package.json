@@ -2,8 +2,11 @@
   "name": "hub",
   "version": "1.0.0",
   "main": "hub.js",
+  "engines": {
+    "node": "14.18.x"
+  },
   "scripts": {
-    "start": "node hub.js",
+    "start": "node hub/hub.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
