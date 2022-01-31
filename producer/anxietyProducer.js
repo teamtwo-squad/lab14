@@ -6,7 +6,7 @@
 
 const socketClient = require('socket.io-client');
 
-const socket = socketClient.connect('http://localhost:3001/caps');
+const socket = socketClient.connect('https://lab-14.herokuapp.com/');
 
 socket.on('roastme', payload => {
   console.log('Picked up order: ', payload.Id);

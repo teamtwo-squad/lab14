@@ -1,20 +1,15 @@
+'use strict';
+
 // emit crying
 //client
 //publisher and subscriber
 // measure tph
-'use strict';
-
 
 const uuid = require('uuid').v4;
 
-
-
-
-
-
 const socketClient = require('socket.io-client');
 
-const socket = socketClient.connect('http://localhost:3001/caps');
+const socket = socketClient.connect('https://lab-14.herokuapp.com/');
 const insultArray = [
   'remember that one super embarrassing thing you did in HS?', 
   'You are loved and appreciated by no one', 
@@ -27,7 +22,6 @@ const insultArray = [
 
 function insultGenerator(){
   let anxiety = insultArray[Math.floor(Math.random() * (insultArray.length - 1))];
-
   return 'Heres your extra anxiety: ' + anxiety;
 }
 
@@ -64,16 +58,13 @@ function nameGenerator(){
     'Person', 
     'Car', 
   ];
-
   let firstName = nameArray[Math.floor(Math.random() * (nameArray.length - 1))];
 
   let lastName = nameArray[Math.floor(Math.random() * (nameArray.length - 1))];
 
-  let userName = firstName + ' ' + lastName;
-  
+  let userName = firstName + ' ' + lastName;  
   return userName;
 }
-
 
 let payload = {
   Id: uuid(),
@@ -82,26 +73,18 @@ let payload = {
 };
 
 setInterval(() => {
-
   socket.emit('roastme', payload);
   console.log('Roast request from customer' , payload.customer);
-
 }, 6000);
 
 socket.on('thinking', (payload) => {
-
   console.log('Order #', payload.Id, 'received');
 });
 
-
 socket.on('hope this helps', payload => {
-
   console.log('roast complete : ' +  insultGenerator());
 
   setTimeout(() => {
-    process.exit();
-  
+    process.exit();  
   }, 2000);
-
 });
-
