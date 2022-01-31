@@ -2,7 +2,7 @@
   "name": "lab14",
   "version": "1.0.0",
   "description": "## Brainstorm ideas",
-  "main": "anxietyProducer.js",
+  "main": "index.html",
   "scripts": {
     "start": "node hub/hub.js",
     "test": "echo \"Error: no test specified\" && exit 1"
