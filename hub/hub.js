@@ -1,26 +1,27 @@
 'use strict';
 
-
-
-const socketio = require('socket.io');
+// const socketio = require('socket.io');
 
 const PORT = process.env.PORT || 3001;
 const INDEX = '/index.html';
+const express = require('express');
+const io = socketIO(server);
+const socketIO = require('socket.io');
 
-const app = require('express')();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
-// const server = socketio(PORT);
+// const app = require('express')();
+// const http = require('http').Server(app);
+// const io = require('socket.io')(http);
+// conexpressserver = socketio(PORT);
 // const caps = server.of('/caps');
-const caps = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/caps`);
-app.get('/', function(req, res) {
-  res.sendfile('index.html');
-});
+// const caps = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/caps`);
+// app.get('/', function(req, res) {
+//   res.sendfile('index.html');
+// });
 // function newInsult(insult){
 //   insultArray.push(insult);
 // }
 
-caps.on('connection', (socket) =>  {
+io.on('connection', (socket) =>  {
   console.log('socket connected');
 
   // socket.on('join', room => {
