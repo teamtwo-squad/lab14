@@ -2,24 +2,25 @@
 
 
 
-// const socketio = require('socket.io');
+const socketio = require('socket.io');
 
 const PORT = process.env.PORT || 3001;
+const INDEX = '/index.html';
 
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 // const server = socketio(PORT);
 // const caps = server.of('/caps');
-// const caps = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/io`);
+const caps = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/caps`);
 app.get('/', function(req, res) {
-  res.sendfile('anxietyReciever.js');
+  res.sendfile('index.html');
 });
 // function newInsult(insult){
 //   insultArray.push(insult);
 // }
 
-io.on('connection', (socket) =>  {
+caps.on('connection', (socket) =>  {
   console.log('socket connected');
 
   // socket.on('join', room => {
@@ -48,9 +49,6 @@ function logger(event, payload) {
   console.log('Event' , event, timestamp);
 }
 
-http.listen(PORT, function() {
-  console.log('listening on *:3001');
-});
-// const server = express()
-//   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-//   .listen(PORT, () => console.log(`Listening on ${PORT}`));
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
