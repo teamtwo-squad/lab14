@@ -1,12 +1,20 @@
 'use strict';
 
+
+
 const socketio = require('socket.io');
 
 const PORT = process.env.PORT || 3001;
 
-const server = socketio(PORT);
-const caps = server.of('/caps');
-
+const app = require('express')();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+// const server = socketio(PORT);
+// const caps = server.of('/caps');
+const caps = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/caps`);
+app.get('/', function(req, res) {
+  res.sendfile('anxietyReciever.js');
+});
 // function newInsult(insult){
 //   insultArray.push(insult);
 // }
@@ -39,3 +47,10 @@ function logger(event, payload) {
   let timestamp = new Date();
   console.log('Event' , event, timestamp);
 }
+
+http.listen(3000, function() {
+  console.log('listening on *:3000');
+});
+// const server = express()
+//   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+//   .listen(PORT, () => console.log(`Listening on ${PORT}`));
