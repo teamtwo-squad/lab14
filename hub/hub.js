@@ -10,8 +10,8 @@ const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 // const server = socketio(PORT);
-// const caps = server.of('/caps');
-const caps = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/caps`);
+// const io = server.of('/io');
+// const io = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/io`);
 app.get('/', function(req, res) {
   res.sendfile('anxietyReciever.js');
 });
@@ -19,7 +19,7 @@ app.get('/', function(req, res) {
 //   insultArray.push(insult);
 // }
 
-caps.on('connection', (socket) =>  {
+io.on('connection', (socket) =>  {
   console.log('socket connected');
 
   // socket.on('join', room => {
