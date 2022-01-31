@@ -17,7 +17,7 @@ socket.on('roastme', payload => {
 
   setTimeout(() => {
     socket.emit('hope this helps', payload);  
-  }, 4000);
+  }, 2000);
 
   setTimeout(() => {
     process.exit();  
