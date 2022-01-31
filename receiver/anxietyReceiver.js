@@ -14,7 +14,7 @@ const uuid = require('uuid').v4;
 
 const socketClient = require('socket.io-client');
 
-const socket = socketClient.connect('http://localhost:3001/caps');
+const socket = socketClient.connect('https://teamtwo-squad-lab-14.herokuapp.com/caps');
 const insultArray = [
   'remember that one super embarrassing thing you did in HS?', 
   'You are loved and appreciated by no one', 
