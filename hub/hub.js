@@ -2,7 +2,7 @@
 
 
 
-const socketio = require('socket.io');
+// const socketio = require('socket.io');
 
 const PORT = process.env.PORT || 3001;
 
@@ -10,8 +10,8 @@ const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 // const server = socketio(PORT);
-// const io = server.of('/io');
-// const io = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/io`);
+// const caps = server.of('/caps');
+// const caps = socketio.connect(`https://teamtwo-squad-lab-14.herokuapp.com/io`);
 app.get('/', function(req, res) {
   res.sendfile('anxietyReciever.js');
 });
@@ -48,8 +48,8 @@ function logger(event, payload) {
   console.log('Event' , event, timestamp);
 }
 
-http.listen(3000, function() {
-  console.log('listening on *:3000');
+http.listen(PORT, function() {
+  console.log('listening on *:3001');
 });
 // const server = express()
 //   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
